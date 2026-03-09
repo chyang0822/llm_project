@@ -1,26 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-@Time    : 2024/10/25 0:16
-@Author  : thezehui@gmail.com
-@File    : auth_handler.py
+FastAPI 版本的认证处理器
 """
 from dataclasses import dataclass
-
 from fastapi import Depends, Form
 from pydantic import ValidationError
 from injector import inject
 
 from internal.dependencies import get_current_user
 from internal.model import Account
-from internal.schema.auth_schema import PasswordLoginReqFastAPI, PasswordLoginResp
+from internal.schema.auth_schema_fastapi import PasswordLoginReqFastAPI, PasswordLoginResp
 from internal.service import AccountService
-from pkg.response import success_message, validate_error_json, success_json, fail_message
+from pkg.response import success_message, success_json, fail_message, validate_error_json
 
 
 @inject
 @dataclass
-class AuthHandler:
+class AuthHandlerFastAPI:
     """LLMOps平台自有授权认证处理器 - FastAPI 版本"""
     account_service: AccountService
 

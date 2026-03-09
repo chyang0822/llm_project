@@ -1,0 +1,109 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "启动后端",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/app/http/app.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "调试后端",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/app/http/app.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "showReturnValue": true,
+      "redirectOutput": true
+    },
+    {
+      "name": "启动前端",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}/imooc-llmops-ui-master",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "测试 password_login_fastapi 接口",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/test_password_login_fastapi.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "调试 password_login 接口",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/test_password_login_fastapi.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "showReturnValue": true,
+      "redirectOutput": true
+    },
+    {
+      "name": "测试 AuthHandler 单元测试",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/test/handler/test_auth_handler_simple.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": false
+    },
+    {
+      "name": "调试 AuthHandler 单元测试",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/imooc-llmops-api-master/test/handler/test_auth_handler_simple.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/imooc-llmops-api-master",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/imooc-llmops-api-master"
+      },
+      "justMyCode": true,
+      "stopOnEntry": false,
+      "showReturnValue": true,
+      "redirectOutput": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "启动前后端",
+      "configurations": ["启动后端", "启动前端"],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "",
+        "order": 1
+      }
+    }
+  ]
+}
